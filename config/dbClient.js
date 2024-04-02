@@ -4,7 +4,7 @@ import "dotenv/config";
 
 const connect = async () => {
   const client = new Client({
-    password: process.env.DB_PASSWORD,
+    password: process.env.DB_PASS,
     database: process.env.DB_DATABASE,
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
