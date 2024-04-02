@@ -1,11 +1,13 @@
 import pkg from "pg";
 const { Pool } = pkg;
+import "dotenv/config";
+
 
 const pool = new Pool({
-  password: "123456",
-  database: "users",
-  host: "localhost",
-    user: "postgres",
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE,
+  host: process.env.DB_HOST,
+    user: process.env.DB_USER,
   allowExitOnIdle: true,
 });
 
@@ -15,5 +17,6 @@ const getDate = async () => {
   return rows;
 };
 getDate();
+
 
 export default pool;
